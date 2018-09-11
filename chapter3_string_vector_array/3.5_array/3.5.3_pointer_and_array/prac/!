@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(void){
+	int i = 1,*pi = &i;
+
+	cout << ++*pi << endl;  // output 2
+	cout << *pi++ << endl;  // output 2
+	
+}
