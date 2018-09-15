@@ -1,7 +1,10 @@
 #include "print.h"
+#include <iostream>
 
+using std::cout;
+using std::endl;
 
 void print(int ival){
-	std::cout << ival * ival << std::endl;
+	cout << ival * ival << endl;
 
 }
