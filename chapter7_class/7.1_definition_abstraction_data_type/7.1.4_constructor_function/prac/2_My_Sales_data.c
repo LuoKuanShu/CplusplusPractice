@@ -2,6 +2,12 @@
 
 using namespace std;
 
+struct Sales_data;
+Sales_data.bookNo;
+Sales_data.units_sold;
+Sales_data.revenue;
+
+
 //declaration non-member func
 istream& read(istream&,Sales_data&);
 
