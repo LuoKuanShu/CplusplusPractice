@@ -50,11 +50,12 @@ private:
 	//do actual display work.
 	void do_display(std::ostream &os) const { 
 		system("clear");
-		
+		//matrix();
+
 		for (pos i = 0;i != contents.size();++i) {
 			if (cursor == i) {
 				//print color char
-				do_display_char('&');
+				do_display_char(get());
 				continue;			
 			}
 
@@ -68,11 +69,26 @@ private:
 		printf(NONE);
 	}
 
+	//generate a matrix object
+	const Screen &matrix() const {
+		char line_break = '\n';
+
+		//insert line_break to contents
+		
+		for (pos i = 0;i != contents.size();i += width) {
+			contents.insert(i,"\n");
+			++i;
+		}
+		
+		return *this;	
+	}
+
 //member data
 private:
 	pos cursor = 0;
 	pos height = 31,width = 135;
-	std::string contents = string(height * width,'*');
+	mutable std::string contents = string(height * width,'*');  //cause matrix will modify it in const member functiton do_display
+	char colorc = ' ';   //place it at cursor
 	mutable size_t access_ctr = 0;  //record count
 
 };

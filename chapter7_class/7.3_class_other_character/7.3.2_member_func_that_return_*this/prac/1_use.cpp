@@ -5,10 +5,7 @@
 using namespace std;
 
 int main(void) {
-	Screen s;  //use the init value in class to init member data.
-
+	Screen s(5,5,'X');
+	
 	s.display(cout);
-	sleep(1);
-	s.move(15,67).set('+').display(cout);
-
 }
