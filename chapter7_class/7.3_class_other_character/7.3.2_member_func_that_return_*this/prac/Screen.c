@@ -5,6 +5,8 @@
 #define NONE "\033[m"
 #define RED "\033[0;32;31m"
 
+using namespace std;
+
 class Screen {
 public:
 	typedef std::string::size_type pos;
@@ -55,9 +57,9 @@ private:
 				do_display_char('&');
 				continue;			
 			}
-		}
 
-		os << contents[i];
+			os << contents[i];
+		}
 	}
 	
 	//display a color char at cursor.
