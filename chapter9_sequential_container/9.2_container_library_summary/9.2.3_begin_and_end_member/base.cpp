@@ -20,7 +20,9 @@ int main(void) {
 
 
 	}
-
+	
+	//const_cast can't used to iterator,it just support pointer and reference.
+	/*
 	//use const_cast to const iterator beloned to non-const container.
 	cbi = v.cbegin();
 	cei = v.cend();
@@ -30,4 +32,17 @@ int main(void) {
 	for(;bi != ei;++bi) {
 		cout << *bi << endl;
 	}
+	*/
+
+	const vector<int> cv(v);
+	//auto iter1 = cv.begin();  //const container obj call const member func begin() that return a const_iterator.
+	//
+	//auto iter2 = v.begin();  //call non-const member function begin() that return a non-const iterator.
+
+	//cout << *(++iter1) << endl;  //we can't modify the value that const_iterator specified,but we can modify const_iterator itself to make it bind different value.
+	
+	//vector<int>::const_iterator iter3 = cv.begin();  
+	//const auto iter3 = cv.begin();  
+	//iter3 = 8;
+
 }
