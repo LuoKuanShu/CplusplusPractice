@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <array>
+#include <vector>
 #include <string>
 
 using namespace std;
@@ -32,5 +33,23 @@ int main(void) {
 	//3 1
 	cout << "s1_b: " << *s1_b << endl;
 	cout << "s2_b: " << *s2_b << endl;
+
+	//34 12
+	cout << "s1: " << s1 << endl;
+	cout << "s2: " << s2 << endl;
 	
+
+
+	//vector
+	vector<int> v1{1,2};
+	vector<int> v2{3,4};
+	auto i_v1 = v1.begin(),i_v2 = v2.begin();
+	//1 3
+	cout << "i_v1: " << *i_v1 << endl;
+	cout << "i_v2: " << *i_v2 << endl;
+
+	swap(v1,v2);
+	1 3
+	cout << "i_v1: " << *i_v1 << endl;
+	cout << "i_v2: " << *i_v2 << endl;
 }
